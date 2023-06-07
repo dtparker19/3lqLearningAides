@@ -13,3 +13,21 @@ class FlashCard(models.Model):
 
 	def __str__(self):
 		return self.front
+
+
+class Decks(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    deck_name = models.CharField(max_length=200)
+    flashcards = models.ManyToManyField(FlashCard, related_name="DeckFlashcards")
+    def __str__(self):
+        return self.deck_name
+    
+    
+class UserFlashcards(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    flashcard = models.ForeignKey(FlashCard, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.user.username + " - " + self.flashcard.title
+ 

@@ -1,13 +1,15 @@
+{% extends "layouts/base.html" %}
 
-{% extends "flashcards/base.html" %}
 
 {% load static %}
 
 {% block content %}
 
 	{% for card in page_obj %}           
-	    <div class="row pt-md-4">
-	        <div class="col-md-12">
+	<div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+
+            <div class="pcoded-content">
 	            <div class="blog-entry ftco-animate d-md-flex">
 	                <a href="#" class="img img-2" style="background-image: url({% static 'images/' %}{{card.category}}1.png );"></a>
 	                <div class="text text-2 pl-md-4">
@@ -22,6 +24,7 @@
 	                </div>
 	            </div>
 	        </div>
+			</div>
 	    </div>
 	    <hr>
 	{% endfor %}
