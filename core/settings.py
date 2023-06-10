@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap4",
     'import_export',
     'debug_toolbar',
+    'apps.practicetest',
 ]
 
 MIDDLEWARE = [
