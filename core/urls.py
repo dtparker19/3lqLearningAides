@@ -12,6 +12,7 @@ urlpatterns = [
 
     # ADD NEW Routes HERE
     path('flashcards/', include('apps.flashcards.urls')),
+    path("__debug__/", include("debug_toolbar.urls")),
     # Leave `Home.Urls` as last the last line
     path("", include("apps.home.urls"))
 ]

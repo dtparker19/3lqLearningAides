@@ -29,6 +29,11 @@ ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')
 # load production server from .env
 ALLOWED_HOSTS        = ['localhost', 'localhost:85', '127.0.0.1',               env('SERVER', default='127.0.0.1') ]
 CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://127.0.0.1', 'https://' + env('SERVER', default='127.0.0.1') ]
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
 
 # Application definition
 
@@ -44,6 +49,8 @@ INSTALLED_APPS = [
     'django_extensions',  # Enable Django extensions
     'crispy_forms',
     "crispy_bootstrap4",
+    'import_export',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"

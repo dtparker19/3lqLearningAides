@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 
     <link rel="stylesheet" href="{% static '/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    
+        
 
 </head>
 <body>
@@ -65,16 +67,24 @@
             <div class="row d-flex">
 
             	<!-- CONTENT Middle -->
-            	<div class="col-xl-12 py-5 px-md-5">
+            	<div class="flip-card">
                     <br><br><br><br>
                     
-	            	<div class="card text-center">
-                        <div class="card-header">
-                            {{card.category}}
+	            	<div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="card-header">
+                                {{card.category}}
+                            </div>
+                            <div class="card-body">        
+                                <h4 id="flip" class="card-text">{{card.front}}</h4>
+                                <br><br>
+                            </div>
                         </div>
-                        <div class="card-body">        
-                            <h4 id="flip" class="card-text">{{card.front}}</h4>
-                            <br><br>
+                        <div class="flip-card-back">
+                            <h1>John Doe</h1> 
+                            <p>Architect & Engineer</p> 
+                            <p>We love that guy</p>
+                          </div>
                             <button href="#" class="btn btn-danger" onclick="flipCard()">
                                 <i class="fa fa-exchange"></i>
                                 Flip Card

@@ -5,13 +5,12 @@ Copyright (c) 2019 - present AppSeed.us
 
 from django.db import models
 from django.contrib.auth.models import User
+from practicetest.models import PracticeExam
 
 
 
 # Create your models here.
    
-class PracticeExam(models.Model):
-    pass
 
 class UserPracticeExam(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
